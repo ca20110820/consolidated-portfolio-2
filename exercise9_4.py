@@ -23,18 +23,21 @@ with open(file_name, 'r') as file:
             else: # If email not in email_dict
                 email_dict[email] = 1
 
-### Extract most prolific committer
-commiter_email = None
-commiter_count = None
+# Extract most prolific committer
+prolific_commiter = max(email_dict, key=email_dict.get)
+print(prolific_commiter, email_dict[prolific_commiter])
 
-for email, count in email_dict.items():
-    if (commiter_email == None) or (commiter_count == None):
-        commiter_email = email
-        commiter_count = count
-    else:
-        # Check if New Prolific Commiter
-        if count > commiter_count:
-            commiter_email = email
-            commiter_count = count
+# commiter_email = None
+# commiter_count = None
 
-print(commiter_email, commiter_count)
+# for email, count in email_dict.items():
+#     if (commiter_email == None) or (commiter_count == None):
+#         commiter_email = email
+#         commiter_count = count
+#     else:
+#         # Check if New Prolific Commiter
+#         if count > commiter_count:
+#             commiter_email = email
+#             commiter_count = count
+
+# print(commiter_email, commiter_count)
